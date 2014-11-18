@@ -11,7 +11,15 @@ import Foundation
 typealias FeedFetchCompletion = (NSData?, NSError?) -> ()
 
 class FeedFetcher {
-    let feedURL = NSURL(string: "https://itunes.apple.com/us/rss/customerreviews/id=542557212/sortBy=mostRecent/json")
+	private let FeedURLStorageKey = "FeedURLKey"
+	var feedURL: NSURL? {
+		get {
+			return NSUserDefaults.standardUserDefaults().URLForKey(FeedURLStorageKey)
+		}
+		set(newValue) {
+			NSUserDefaults.standardUserDefaults().setURL(newValue!, forKey: FeedURLStorageKey)
+		}
+	}
     lazy var urlSession: NSURLSession = {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
