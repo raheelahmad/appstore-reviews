@@ -65,8 +65,12 @@ class FeedViewController: UITableViewController {
 		}
     }
     
-    @IBAction func reload(sender: UIBarButtonItem) {
-        fetchFeed()
+    @IBAction func reload(sender: AnyObject) {
+		if feedFetcher.feedURL == nil {
+			askForAppID()
+		} else {
+			fetchFeed()
+		}
     }
 	
 	func fetchFeed() {
@@ -83,7 +87,16 @@ class FeedViewController: UITableViewController {
 			}
 		}
 	}
-    
+
+	func askForAppID() {
+		let askForAppIDView = UIAlertView(title: "Enter App ID",
+			message: "Enter your app ID",
+			delegate: self,
+			cancelButtonTitle: "Cancel")
+		askForAppIDView.alertViewStyle = UIAlertViewStyle.PlainTextInput
+		askForAppIDView.addButtonWithTitle("OK")
+		askForAppIDView.show()
+	}
 
     func showError() {
 		UIAlertView(title: "Error fetching the reviews",
@@ -112,8 +125,22 @@ class FeedViewController: UITableViewController {
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        fetchFeed()
     }
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		reload(self)
+	}
+}
 
+extension FeedViewController: UIAlertViewDelegate {
+	func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
+		if buttonIndex == 1 {
+			if let appID = alertView.textFieldAtIndex(0)?.text {
+				feedFetcher.feedURL = NSURL(string: "https://itunes.apple.com/us/rss/customerreviews/id=\(appID)/sortBy=mostRecent/json")
+				reload(self)
+			}
+		}
+	}
 }
 
