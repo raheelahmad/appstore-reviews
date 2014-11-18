@@ -48,6 +48,10 @@ class FeedParser {
         }
     }
 	
+	func reset() {
+		entries.removeAll(keepCapacity: false)
+	}
+	
 	func switchSorting(sorting: Sorting) {
 		switch sorting {
 		case .ByPosition:

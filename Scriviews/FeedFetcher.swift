@@ -17,7 +17,9 @@ class FeedFetcher {
 			return NSUserDefaults.standardUserDefaults().URLForKey(FeedURLStorageKey)
 		}
 		set(newValue) {
-			NSUserDefaults.standardUserDefaults().setURL(newValue!, forKey: FeedURLStorageKey)
+			if newValue != nil {
+				NSUserDefaults.standardUserDefaults().setURL(newValue!, forKey: FeedURLStorageKey)
+			}
 		}
 	}
     lazy var urlSession: NSURLSession = {
@@ -41,7 +43,11 @@ class FeedFetcher {
         feedFetchTask.resume()
     }
 	
-	func notify(completion: FeedFetchCompletion, data: NSData?, error: NSError?) {
+	func reset() {
+		NSUserDefaults.standardUserDefaults().setObject(nil, forKey: FeedURLStorageKey)
+	}
+	
+	private func notify(completion: FeedFetchCompletion, data: NSData?, error: NSError?) {
 		dispatch_async(dispatch_get_main_queue()) {
 			completion(data, error)
 		}
