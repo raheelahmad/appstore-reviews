@@ -18,16 +18,17 @@ struct Entry {
     var appVersion: String?
 }
 
-class FeedViewController: UITableViewController {
+class FeedViewController: UIViewController {
     @IBOutlet weak var reloadButton: UIBarButtonItem!
     @IBOutlet weak var sortingControl: UISegmentedControl!
+	@IBOutlet weak var tableView: UITableView!
 	let feedFetcher = FeedFetcher()
 	let parser = FeedParser()
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return parser.entriesCount
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 		if let entry = parser.entryAtIndex(indexPath.row) {
 			let cellId = cellIdentifierForEntry(entry)
 			let cell = tableView.dequeueReusableCellWithIdentifier(cellId, forIndexPath: indexPath) as UITableViewCell
@@ -62,11 +63,19 @@ class FeedViewController: UITableViewController {
 		if let sorting = Sorting(rawValue: sortingControl.selectedSegmentIndex) {
 			parser.switchSorting(sorting)
 			tableView.reloadData()
+			if parser.entriesCount > 0 {
+				let topPath = NSIndexPath(forRow: 0, inSection: 0)
+				tableView.scrollToRowAtIndexPath(topPath, atScrollPosition: .Top, animated: true)
+			}
 		}
     }
     
-    @IBAction func reload(sender: UIBarButtonItem) {
-        fetchFeed()
+    @IBAction func reload(sender: AnyObject) {
+		if feedFetcher.feedURL == nil {
+			askForAppID()
+		} else {
+			fetchFeed()
+		}
     }
 	
 	func fetchFeed() {
@@ -83,7 +92,24 @@ class FeedViewController: UITableViewController {
 			}
 		}
 	}
-    
+	
+	
+	@IBAction func resetAndAskForAppIDAgain(sender: AnyObject) {
+		feedFetcher.reset()
+		parser.reset()
+		tableView.reloadData()
+		askForAppID()
+	}
+
+	func askForAppID() {
+		let askForAppIDView = UIAlertView(title: "Enter App ID",
+			message: "Enter your app ID",
+			delegate: self,
+			cancelButtonTitle: "Cancel")
+		askForAppIDView.alertViewStyle = UIAlertViewStyle.PlainTextInput
+		askForAppIDView.addButtonWithTitle("OK")
+		askForAppIDView.show()
+	}
 
     func showError() {
 		UIAlertView(title: "Error fetching the reviews",
@@ -111,9 +137,22 @@ class FeedViewController: UITableViewController {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
-
-        fetchFeed()
     }
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		reload(self)
+	}
+}
 
+extension FeedViewController: UIAlertViewDelegate {
+	func alertView(alertView: UIAlertView, didDismissWithButtonIndex buttonIndex: Int) {
+		if buttonIndex == 1 {
+			if let appID = alertView.textFieldAtIndex(0)?.text {
+				feedFetcher.feedURL = NSURL(string: "https://itunes.apple.com/us/rss/customerreviews/id=\(appID)/sortBy=mostRecent/json")
+				reload(self)
+			}
+		}
+	}
 }
 

@@ -11,7 +11,17 @@ import Foundation
 typealias FeedFetchCompletion = (NSData?, NSError?) -> ()
 
 class FeedFetcher {
-    let feedURL = NSURL(string: "https://itunes.apple.com/us/rss/customerreviews/id=542557212/sortBy=mostRecent/json")
+	private let FeedURLStorageKey = "FeedURLKey"
+	var feedURL: NSURL? {
+		get {
+			return NSUserDefaults.standardUserDefaults().URLForKey(FeedURLStorageKey)
+		}
+		set(newValue) {
+			if newValue != nil {
+				NSUserDefaults.standardUserDefaults().setURL(newValue!, forKey: FeedURLStorageKey)
+			}
+		}
+	}
     lazy var urlSession: NSURLSession = {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         let session = NSURLSession(configuration: configuration)
@@ -33,7 +43,11 @@ class FeedFetcher {
         feedFetchTask.resume()
     }
 	
-	func notify(completion: FeedFetchCompletion, data: NSData?, error: NSError?) {
+	func reset() {
+		NSUserDefaults.standardUserDefaults().setObject(nil, forKey: FeedURLStorageKey)
+	}
+	
+	private func notify(completion: FeedFetchCompletion, data: NSData?, error: NSError?) {
 		dispatch_async(dispatch_get_main_queue()) {
 			completion(data, error)
 		}
