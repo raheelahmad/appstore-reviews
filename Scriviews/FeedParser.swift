@@ -48,7 +48,7 @@ class FeedParser {
         }
     }
 	
-	func switchSoring(sorting: Sorting) {
+	func switchSorting(sorting: Sorting) {
 		switch sorting {
 		case .ByPosition:
 			entries = sorted(entries, { one, two in one.position < two.position })

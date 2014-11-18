@@ -60,7 +60,7 @@ class FeedViewController: UITableViewController {
     
     @IBAction func switchSorting() {
 		if let sorting = Sorting(rawValue: sortingControl.selectedSegmentIndex) {
-			parser.switchSoring(sorting)
+			parser.switchSorting(sorting)
 			tableView.reloadData()
 		}
     }
@@ -86,7 +86,10 @@ class FeedViewController: UITableViewController {
     
 
     func showError() {
-		// Error, what error?
+		UIAlertView(title: "Error fetching the reviews",
+			message: "There was an error fetching and parsing the feed.",
+			delegate: nil,
+			cancelButtonTitle: "OK").show()
     }
     
     let RatingCellId = "Rating"
