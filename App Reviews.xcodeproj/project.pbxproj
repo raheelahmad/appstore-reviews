@@ -8,45 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		597A3C5919EA2B07000F5F15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A3C5819EA2B07000F5F15 /* AppDelegate.swift */; };
-		597A3C5B19EA2B07000F5F15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A3C5A19EA2B07000F5F15 /* ViewController.swift */; };
+		597A3C5B19EA2B07000F5F15 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A3C5A19EA2B07000F5F15 /* FeedViewController.swift */; };
 		597A3C5E19EA2B07000F5F15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 597A3C5C19EA2B07000F5F15 /* Main.storyboard */; };
 		597A3C6019EA2B07000F5F15 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 597A3C5F19EA2B07000F5F15 /* Images.xcassets */; };
 		597A3C6319EA2B07000F5F15 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 597A3C6119EA2B07000F5F15 /* LaunchScreen.xib */; };
-		597A3C6F19EA2B07000F5F15 /* ScriviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A3C6E19EA2B07000F5F15 /* ScriviewsTests.swift */; };
+		597A3C7919EB44BA000F5F15 /* RatingCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597A3C7819EB44BA000F5F15 /* RatingCells.swift */; };
+		59DF0BD61A1AECDA00883E15 /* FeedFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF0BD51A1AECDA00883E15 /* FeedFetcher.swift */; };
+		59DF0BD81A1AEE6A00883E15 /* FeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF0BD71A1AEE6A00883E15 /* FeedParser.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		597A3C6919EA2B07000F5F15 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 597A3C4B19EA2B07000F5F15 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 597A3C5219EA2B07000F5F15;
-			remoteInfo = Scriviews;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		597A3C5319EA2B07000F5F15 /* Scriviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scriviews.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		597A3C5319EA2B07000F5F15 /* App Reviews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "App Reviews.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597A3C5719EA2B07000F5F15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597A3C5819EA2B07000F5F15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		597A3C5A19EA2B07000F5F15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		597A3C5A19EA2B07000F5F15 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		597A3C5D19EA2B07000F5F15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		597A3C5F19EA2B07000F5F15 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		597A3C6219EA2B07000F5F15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		597A3C6819EA2B07000F5F15 /* ScriviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScriviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		597A3C6D19EA2B07000F5F15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597A3C6E19EA2B07000F5F15 /* ScriviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriviewsTests.swift; sourceTree = "<group>"; };
+		597A3C7819EB44BA000F5F15 /* RatingCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingCells.swift; sourceTree = "<group>"; };
+		59DF0BD51A1AECDA00883E15 /* FeedFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFetcher.swift; sourceTree = "<group>"; };
+		59DF0BD71A1AEE6A00883E15 /* FeedParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		597A3C5019EA2B07000F5F15 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		597A3C6519EA2B07000F5F15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,8 +46,8 @@
 		597A3C4A19EA2B07000F5F15 = {
 			isa = PBXGroup;
 			children = (
-				597A3C5519EA2B07000F5F15 /* Scriviews */,
-				597A3C6B19EA2B07000F5F15 /* ScriviewsTests */,
+				597A3C5519EA2B07000F5F15 /* App Review */,
+				597A3C6B19EA2B07000F5F15 /* App Review Tests */,
 				597A3C5419EA2B07000F5F15 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,22 +55,25 @@
 		597A3C5419EA2B07000F5F15 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				597A3C5319EA2B07000F5F15 /* Scriviews.app */,
-				597A3C6819EA2B07000F5F15 /* ScriviewsTests.xctest */,
+				597A3C5319EA2B07000F5F15 /* App Reviews.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		597A3C5519EA2B07000F5F15 /* Scriviews */ = {
+		597A3C5519EA2B07000F5F15 /* App Review */ = {
 			isa = PBXGroup;
 			children = (
 				597A3C5819EA2B07000F5F15 /* AppDelegate.swift */,
-				597A3C5A19EA2B07000F5F15 /* ViewController.swift */,
+				597A3C5A19EA2B07000F5F15 /* FeedViewController.swift */,
+				59DF0BD51A1AECDA00883E15 /* FeedFetcher.swift */,
 				597A3C5C19EA2B07000F5F15 /* Main.storyboard */,
 				597A3C5F19EA2B07000F5F15 /* Images.xcassets */,
 				597A3C6119EA2B07000F5F15 /* LaunchScreen.xib */,
 				597A3C5619EA2B07000F5F15 /* Supporting Files */,
+				597A3C7819EB44BA000F5F15 /* RatingCells.swift */,
+				59DF0BD71A1AEE6A00883E15 /* FeedParser.swift */,
 			);
+			name = "App Review";
 			path = Scriviews;
 			sourceTree = "<group>";
 		};
@@ -95,12 +85,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		597A3C6B19EA2B07000F5F15 /* ScriviewsTests */ = {
+		597A3C6B19EA2B07000F5F15 /* App Review Tests */ = {
 			isa = PBXGroup;
 			children = (
 				597A3C6E19EA2B07000F5F15 /* ScriviewsTests.swift */,
 				597A3C6C19EA2B07000F5F15 /* Supporting Files */,
 			);
+			name = "App Review Tests";
 			path = ScriviewsTests;
 			sourceTree = "<group>";
 		};
@@ -115,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		597A3C5219EA2B07000F5F15 /* Scriviews */ = {
+		597A3C5219EA2B07000F5F15 /* App Reviews */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 597A3C7219EA2B07000F5F15 /* Build configuration list for PBXNativeTarget "Scriviews" */;
+			buildConfigurationList = 597A3C7219EA2B07000F5F15 /* Build configuration list for PBXNativeTarget "App Reviews" */;
 			buildPhases = (
 				597A3C4F19EA2B07000F5F15 /* Sources */,
 				597A3C5019EA2B07000F5F15 /* Frameworks */,
@@ -127,28 +118,10 @@
 			);
 			dependencies = (
 			);
-			name = Scriviews;
+			name = "App Reviews";
 			productName = Scriviews;
-			productReference = 597A3C5319EA2B07000F5F15 /* Scriviews.app */;
+			productReference = 597A3C5319EA2B07000F5F15 /* App Reviews.app */;
 			productType = "com.apple.product-type.application";
-		};
-		597A3C6719EA2B07000F5F15 /* ScriviewsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 597A3C7519EA2B07000F5F15 /* Build configuration list for PBXNativeTarget "ScriviewsTests" */;
-			buildPhases = (
-				597A3C6419EA2B07000F5F15 /* Sources */,
-				597A3C6519EA2B07000F5F15 /* Frameworks */,
-				597A3C6619EA2B07000F5F15 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				597A3C6A19EA2B07000F5F15 /* PBXTargetDependency */,
-			);
-			name = ScriviewsTests;
-			productName = ScriviewsTests;
-			productReference = 597A3C6819EA2B07000F5F15 /* ScriviewsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -162,13 +135,9 @@
 					597A3C5219EA2B07000F5F15 = {
 						CreatedOnToolsVersion = 6.0.1;
 					};
-					597A3C6719EA2B07000F5F15 = {
-						CreatedOnToolsVersion = 6.0.1;
-						TestTargetID = 597A3C5219EA2B07000F5F15;
-					};
 				};
 			};
-			buildConfigurationList = 597A3C4E19EA2B07000F5F15 /* Build configuration list for PBXProject "Scriviews" */;
+			buildConfigurationList = 597A3C4E19EA2B07000F5F15 /* Build configuration list for PBXProject "App Reviews" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -181,8 +150,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				597A3C5219EA2B07000F5F15 /* Scriviews */,
-				597A3C6719EA2B07000F5F15 /* ScriviewsTests */,
+				597A3C5219EA2B07000F5F15 /* App Reviews */,
 			);
 		};
 /* End PBXProject section */
@@ -198,13 +166,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		597A3C6619EA2B07000F5F15 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,28 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597A3C5B19EA2B07000F5F15 /* ViewController.swift in Sources */,
+				59DF0BD61A1AECDA00883E15 /* FeedFetcher.swift in Sources */,
+				597A3C5B19EA2B07000F5F15 /* FeedViewController.swift in Sources */,
+				597A3C7919EB44BA000F5F15 /* RatingCells.swift in Sources */,
 				597A3C5919EA2B07000F5F15 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		597A3C6419EA2B07000F5F15 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				597A3C6F19EA2B07000F5F15 /* ScriviewsTests.swift in Sources */,
+				59DF0BD81A1AEE6A00883E15 /* FeedParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		597A3C6A19EA2B07000F5F15 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 597A3C5219EA2B07000F5F15 /* Scriviews */;
-			targetProxy = 597A3C6919EA2B07000F5F15 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		597A3C5C19EA2B07000F5F15 /* Main.storyboard */ = {
@@ -340,7 +288,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Scriviews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "App Reviews";
 			};
 			name = Debug;
 		};
@@ -350,48 +298,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Scriviews/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		597A3C7619EA2B07000F5F15 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ScriviewsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scriviews.app/Scriviews";
-			};
-			name = Debug;
-		};
-		597A3C7719EA2B07000F5F15 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = ScriviewsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Scriviews.app/Scriviews";
+				PRODUCT_NAME = "App Reviews";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		597A3C4E19EA2B07000F5F15 /* Build configuration list for PBXProject "Scriviews" */ = {
+		597A3C4E19EA2B07000F5F15 /* Build configuration list for PBXProject "App Reviews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				597A3C7019EA2B07000F5F15 /* Debug */,
@@ -400,21 +314,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		597A3C7219EA2B07000F5F15 /* Build configuration list for PBXNativeTarget "Scriviews" */ = {
+		597A3C7219EA2B07000F5F15 /* Build configuration list for PBXNativeTarget "App Reviews" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				597A3C7319EA2B07000F5F15 /* Debug */,
 				597A3C7419EA2B07000F5F15 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		597A3C7519EA2B07000F5F15 /* Build configuration list for PBXNativeTarget "ScriviewsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				597A3C7619EA2B07000F5F15 /* Debug */,
-				597A3C7719EA2B07000F5F15 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
